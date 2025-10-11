@@ -42,3 +42,11 @@ for i, contact in enumerate(contacts,start = 1):
             f_address += " "+ word.title()
 
     address = f_address.replace(" ,", ",").strip()
+
+    cleaned_contacts.append((name, phone, email, address))
+    
+    print(f"CONTACT {i}:") 
+    print(f"Name:     {name.strip()}")
+    print(f"Phone:    {phone.strip()}")
+    print(f"Email:    {email.strip()}")
+    print(f"Address:    {address.strip()}")
