@@ -15,12 +15,12 @@ while True:
 
 print("Enter contact information (format: name|phone|email|address):")
 print("\n=== CONTACT DIRECTORY ===\n")
-    
+# store all cleaned contacts    
 cleaned_contacts = []
 
 for i, contact in enumerate(contacts,start = 1):
     name, phone, email, address = contact.split('|') 
-
+    # used replace for name
     name = name.title().replace("  ", "  ")
     n_phone = ""
     for n in phone:
@@ -29,9 +29,9 @@ for i, contact in enumerate(contacts,start = 1):
     
     phone = n_phone
     phone = f"({phone[0:3]}) {phone[3:6]}-{phone[6:10]}"
-
+    # email (cleaned)
     email = email.lower().strip()
-    
+    # formatted address
     address = address.strip().replace(",", "")
     n_address = address.split()
     f_address = ""
@@ -50,11 +50,11 @@ for i, contact in enumerate(contacts,start = 1):
     print(f"Phone:    {phone.strip()}")
     print(f"Email:    {email.strip()}")
     print(f"Address:    {address.strip()}")
-
+# directory summary
 print("\n")
 print("=== DIRECTORY SUMMARY ===")
 print(f"Total contacts processed: {len(cleaned_contacts)}\n")
-
+# formatted for printing
 print("=== FORMATTED FOR PRINTING ===")
 for name, phone, email, address, in cleaned_contacts:
     name_parts = name.split()
