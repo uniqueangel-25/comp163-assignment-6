@@ -50,3 +50,15 @@ for i, contact in enumerate(contacts,start = 1):
     print(f"Phone:    {phone.strip()}")
     print(f"Email:    {email.strip()}")
     print(f"Address:    {address.strip()}")
+
+print("\n")
+print("=== DIRECTORY SUMMARY ===")
+print(f"Total contacts processed: {len(cleaned_contacts)}\n")
+
+print("=== FORMATTED FOR PRINTING ===")
+for name, phone, email, address, in cleaned_contacts:
+    name_parts = name.split()
+    last_name = name_parts[-1]
+    first_names = " ".join(name_parts[:-1])
+    formatted_name = f"{last_name}, {first_names}"
+    print(f"{formatted_name:<30}{phone:<20}{email}")
